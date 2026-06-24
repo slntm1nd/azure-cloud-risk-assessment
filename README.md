@@ -40,7 +40,33 @@ Using a standard GRC qualitative-quantitative matrix (Scale 1-5):
 | Delayed Incident Detection (Default logs) | 3 | 3 | **9** | **MEDIUM** |
 
 ---
+---
 
+## 🛡️ Phase 3: Regulatory Mapping & Remediation Strategy
+
+To align the assessed infrastructure with enterprise security standards, the identified risks were mapped to industry-recognized frameworks, and a formal remediation roadmap was established.
+
+### 1. Framework Alignment
+* **NIST CSF v2.0 (PR.AC-01):** Access permissions and authorizations are managed. *Remediation directly addresses the open RDP violation.*
+* **NIST CSF v2.0 (PR.IR-02):** Network security controls protect communications. *Addressed via NSG tightening.*
+* **CIS Critical Security Control 12.3:** Securely Manage Network Infrastructure. *Requires restricting internet-facing management ports.*
+
+### 2. Implementation Roadmap
+1. **Network Hardening:** Reconfigured the Network Security Group (NSG) inbound rules to restrict Port 3389 (RDP) from `Any/Internet` to a specific, authorized administrative IP address only, completely blocking unauthorized external scanning.
+2. **Identity Enforcement:** Recommended transitioning from the local single-factor `azureadmin` account to Microsoft Entra ID integration with enforced Multi-Factor Authentication (MFA) and Conditional Access policies.
+3. **Audit & Monitoring Readiness:** Outlined the deployment of an Azure Log Analytics Workspace to capture and aggregate security event logs, ensuring centralized audit trails and alignment with compliance requirements.
+
+---
+
+## 👥 Contact & Project Author
+* **Author:** Jane Nikolaichuk
+* **Role:** IAM & Access Governance Analyst (Charlotte, NC)
+* **LinkedIn:** www.linkedin.com/in/iamjanenikolaichuk
+
+* **GitHub Portfolio:** https://github.com/slntm1nd
+
+---
+**Skills Demonstrated:** Cloud Security Governance • Risk Assessment & Quantification • NIST CSF & CIS Controls Mapping • Microsoft Azure Networking & NSGs • Compliance Reporting • Audit Readiness
 ## 🎯 Key Takeaways & GRC Competencies Demonstrated
 - **Attack Surface Reduction:** Documented the severe risks of leaving default RDP ports open to the entire internet.
 - **Risk Communication:** Translated technical misconfigurations (NSG rules, missing MFA) into a structured risk register easily understood by executive leadership.
